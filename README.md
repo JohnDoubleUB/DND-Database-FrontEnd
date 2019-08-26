@@ -20,7 +20,8 @@ For my project I decided to create an application that would allow the user to c
 ### Wireframes
 ### Plan 1 Wireframe (One Page)
 ![Plan1Wireframe](/Documentation/DNDPagePlanv2.jpg)
-
+##### Plan Outline
+The plan here would be to have all the interaction on a single page using the fields to both display information of a given character, edit and delete it by using the top most dropdown to either select an existing or new character. The user might also need to write in a characters name to verify that they wanted to delete it (as on one page like this it would be easier for it to be done accidentally)
 ### Plan 2 Wireframe (2 Page)
 #### Create and Edit Page
 ![Plan2Wireframe1](/Documentation/DNDPagePlanAlternate1_Create_Edit.jpg)
