@@ -28,7 +28,7 @@ The plan here would be to have all the interaction on a single page using the fi
 #### View and Delete Page (Possibility 1)
 ![Plan2Wireframe2](/Documentation/DNDPagePlanAlternate1_View_Delete.jpg)
 #### Plan 2 - Outline
-The plan here would be to maintain the ability to edit existing and create new on the first page, but then break out the viewing and deleting into a separate page so to make this more separated.
+The plan here would be to maintain the ability to edit existing and create new on the first page, but then break out the viewing and deleting into a separate page so to make this more separated. The second page has been marked Possiblity 1 as the other possiblity is instead having a similar layout to the create and edit page where the dropdown just shows uneditable information in a similar layout
 
 ### Final Appearance
 
