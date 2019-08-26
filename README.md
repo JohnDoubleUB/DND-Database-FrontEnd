@@ -10,3 +10,14 @@ To create an OOP-based application making use of supporting tools, methodolgies 
 The application must manipulate two tables with full CRUD functionality.
 ### Solution
 For my project I decided to create an application that would allow the user to create dnd characters, edit, view and remove them from a database, there would be separate databases for certain details of the characters such as the race and class.
+## Architecture
+
+## Testing
+
+## Deployment
+
+## Front End Design
+### Wireframes
+### Final Appearance
+
+## Future Improvements
