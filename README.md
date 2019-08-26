@@ -1,4 +1,4 @@
-# Personal yoga application
+# DND Character Sheet Application
 
 In fulfilment of the solo project assignment for QA Consulting
 
