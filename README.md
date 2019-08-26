@@ -3,8 +3,9 @@
 In fulfilment of the solo project assignment for QA Consulting
 
 ## Index
-[brief](#brief)
-  *  [Solution] (#solution)
+[Brief](#brief)
+   * [Solution](#solution)
+
 
 
 <a name="brief"></a>
