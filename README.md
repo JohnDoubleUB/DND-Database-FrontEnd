@@ -6,7 +6,18 @@ In fulfilment of the solo project assignment for QA Consulting
 [Brief](#brief)
    * [Solution](#solution)
 
+[Architecture](#architecture)
 
+[Testing](#testing)
+
+[Deployment](#deployment)
+
+[Front End Design](#frontend)
+   * [Plan 1](#fep1)
+   * [Plan 2](#fep2)
+   * [Final Appearence](#fefa)
+
+[Future Improvments](#improvements)
 
 <a name="brief"></a>
 ## The Brief
@@ -27,10 +38,12 @@ For my project I decided to create an application that would allow the user to c
 <a name="frontend"></a>
 ## Front End Design
 ### Wireframes
+<a name="fep1"></a>
 ### Plan 1 Wireframe (One Page)
 ![Plan1Wireframe](/Documentation/DNDPagePlanv2.jpg)
 #### Plan 1 - Outline
 The plan here would be to have all the interaction on a single page using the fields to both display information of a given character, edit and delete it by using the top most dropdown to either select an existing or new character. The user might also need to write in a characters name to verify that they wanted to delete it (as on one page like this it would be easier for it to be done accidentally)
+<a name="fep2"></a>
 ### Plan 2 Wireframe (2 Page)
 #### Create and Edit Page
 ![Plan2Wireframe1](/Documentation/DNDPagePlanAlternate1_Create_Edit.jpg)
@@ -39,6 +52,7 @@ The plan here would be to have all the interaction on a single page using the fi
 #### Plan 2 - Outline
 The plan here would be to maintain the ability to edit existing and create new on the first page, but then break out the viewing and deleting into a separate page so to make this more separated. The second page has been marked Possiblity 1 as the other possiblity is instead having a similar layout to the create and edit page where the dropdown just shows uneditable information in a similar layout
 
+<a name="fefa"></a>
 ### Final Appearance
 
 <a name="improvements"></a>
