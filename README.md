@@ -18,6 +18,15 @@ For my project I decided to create an application that would allow the user to c
 
 ## Front End Design
 ### Wireframes
+### Plan 1 Wireframe (One Page)
+![Plan1Wireframe](/Documentation/DNDPagePlanv2.jpg)
+
+### Plan 2 Wireframe (2 Page)
+#### Create and Edit Page
+![Plan2Wireframe1](/Documentation/DNDPagePlanAlternate1_Create_Edit.jpg)
+#### View and Delete Page
+![Plan2Wireframe2](/Documentation/DNDPagePlanAlternate1_View_Delete.jpg)
+
 ### Final Appearance
 
 ## Future Improvements
