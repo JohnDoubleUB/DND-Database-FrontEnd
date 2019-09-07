@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>DND DB - Create/Edit Character</title>
+
+<link rel = "stylesheet" href="css/maincss.css" type="text/css"/>
+</head>
+<body>
+<div class="header">
+    <h1>DND Database - Create/Edit Character</h1>
+</div>
+
+<div class="nav">
+    <ul> 
+        <li><a href="index.html">Home</a></li>
+        <li><a href="create-edit-character.html">Create/Edit a Character</a></li>
+        <li><a href="create-edit-inventory.html">Create/Edit Character Inventory</a></li>
+        <li><a href="view-delete-character-and-inventory.html">View/Delete Character + Inventory</a></li>
+    </ul>
+</div>
+<div class="prebody">
+    
+    <p>Select a Character</p>
+    <select name="Character" id="charSelc"> 
+        <option value="0">[New Character]</option>
+    </select>
+
+    <p>Delete a given Character</p>
+    <input type="text" id="delfield" placeholder="Character Name Confirm"/>
+    <button>Confirm Deletion</button>
+</div>
+
+<div class="mainbody">    
+    <form onsubmit="return submitCharacterForm(this)" id="charsub">
+        
+        <h1>Character Info:</h1>
+        <p>Name</p>
+        <input type="text" name="characterName" placeholder="Character Name" required="required" pattern="[A-Za-z0-9]{1,20}"/><span class="required">*</span>
+        <p>Race</p>
+        <input type="text" name="race" placeholder="Race" required="required" pattern="[A-Za-z0-9]{1,20}"/><span class="required">*</span>
+        <p>Class</p>
+        <input type="text" name="class" placeholder="Class" required="required" pattern="[A-Za-z0-9]{1,20}"/><span class="required">*</span>
+        <p>Background</p>
+        <input type="text" name="background" placeholder="Background" required="required" pattern="[A-Za-z0-9]{1,20}"/><span class="required">*</span>
+        <p>Alignment</p>
+        <input type="text" name="alignment" placeholder="Alignment" required="required" pattern="[A-Za-z0-9]{1,20}"/><span class="required">*</span>
+        <p>Level</p>
+        <input type="number" name="level" min="1" max="999" value="1" onfocusout="checkV(this,1)">
+        
+        <h1>Base Stats:</h1>
+        <p>Strength</p>
+        <input type="number" name="base_str" min="0" max="99" value="10" onfocusout="checkV(this,10)">
+        <p>Dexterity</p>
+        <input type="number" name="base_dex" min="0" max="99" value="10" onfocusout="checkV(this,10)">
+        <p>Constitution</p>
+        <input type="number" name="base_con" min="0" max="99" value="10" onfocusout="checkV(this,10)">
+        <p>Intelligence</p>
+        <input type="number" name="base_int" min="0" max="99" value="10" onfocusout="checkV(this,10)">
+        <p>Wisdom</p>
+        <input type="number" name="base_wis" min="0" max="99" value="10" onfocusout="checkV(this,10)">
+        <p>Charisma</p>
+        <input type="number" name="base_cha" min="0" max="99" value="10" onfocusout="checkV(this,10)">
+        <p>Hit Points</p>
+        <input type="number" name="base_hp" min="0" max="99" value="10" onfocusout="checkV(this,10)">
+
+        <h1>Proficencies:</h1>
+        <input type="number" name="proficiency" min="0" max="99" value="1" onfocusout="checkV(this,1)">
+        
+        <h2>Skill Proficiencies</h2>
+        <input type="checkbox" name="skillprofs" value="prof_acro"> Acrobatics(Dex)
+        <input type="checkbox" name="skillprofs" value="prof_ahan"> Animal Handling(Wis)
+        <input type="checkbox" name="skillprofs" value="prof_arca"> Arcana(Int)<br>
+        <input type="checkbox" name="skillprofs" value="prof_athl"> Athletics(Str)
+        <input type="checkbox" name="skillprofs" value="prof_decp"> Deception(Cha)
+        <input type="checkbox" name="skillprofs" value="prof_hist"> History(Int)<br>
+        <input type="checkbox" name="skillprofs" value="prof_insi"> Insight(Wis)
+        <input type="checkbox" name="skillprofs" value="prof_itmd"> Intimidation(Cha)
+        <input type="checkbox" name="skillprofs" value="prof_invs"> Investigation(Int)<br>
+        <input type="checkbox" name="skillprofs" value="prof_medi"> Medicine(Wis)
+        <input type="checkbox" name="skillprofs" value="prof_natr"> Nature(Int)
+        <input type="checkbox" name="skillprofs" value="prof_perp"> Perception(Wis)<br>
+        <input type="checkbox" name="skillprofs" value="prof_perf"> Performance(Cha)
+        <input type="checkbox" name="skillprofs" value="prof_pers"> Persuasion(Cha)
+        <input type="checkbox" name="skillprofs" value="prof_reli"> Religion(Int)<br>
+        <input type="checkbox" name="skillprofs" value="prof_slei"> Sleight of Hand(Dex)
+        <input type="checkbox" name="skillprofs" value="prof_slth"> Stealth(Dex)
+        <input type="checkbox" name="skillprofs" value="prof_surv"> Survival(Wis)
+        
+        <h2>Saving Throws:</h2>
+        <input type="checkbox" name="savingthrows" value="svgthr_str"> Strength
+        <input type="checkbox" name="savingthrows" value="svgthr_dex"> Dexterity
+        <input type="checkbox" name="savingthrows" value="svgthr_con"> Constitution<br>
+        <input type="checkbox" name="savingthrows" value="svgthr_int"> Intelligence
+        <input type="checkbox" name="savingthrows" value="svgthr_wis"> Wisdom
+        <input type="checkbox" name="savingthrows" value="svgthr_cha"> Charisma
+        <h1>Other:</h1>
+        <h2>Proficiencies & Languages:</h2>
+        <textarea rows="4" cols="50" name="other_profs_and_languages"></textarea>
+
+        <h2>Features & Traits</h2>
+        <textarea rows="4" cols="50" name="features_and_traits"></textarea><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+<script src="scripts/formcollection.js"></script> 
+
+</body>
+</html>

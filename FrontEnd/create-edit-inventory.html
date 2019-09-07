@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>DND DB - Create/Edit Inventory</title>
+
+<link rel = "stylesheet" href="css/maincss.css" type="text/css"/>
+</head>
+<body>
+<div class="header">
+    <h1>DND Database - Create/Edit Inventory</h1>
+</div>
+
+<div class="nav">
+    <ul> 
+        <li><a href="index.html">Home</a></li>
+        <li><a href="create-edit-character.html">Create/Edit a Character</a></li>
+        <li><a href="create-edit-inventory.html">Create/Edit Character Inventory</a></li>
+        <li><a href="view-delete-character-and-inventory.html">View/Delete Character + Inventory</a></li>
+    </ul>
+</div>
+
+<div class="prebody">
+    
+        <p>Select a Character Inventory</p>
+        <select name="Character" id="charSelc"> 
+            <option value="0">[New Character]</option>
+        </select>
+
+        <p>Delete a given Character Inventory</p>
+        <input type="text" id="delfield" placeholder="Character Name Confirm"/>
+        <button>Confirm Deletion</button>
+</div>
+
+<div class="mainbody">
+    <form onsubmit="return submitInventoryForm(this)" id="invsub">
+        <h1>Inventory:</h1>
+        <h2>Currency:</h2>
+        <p>CP</p>
+        <input type="number" name="copper_piece" min="0" max="99" value="0" onfocusout="checkV(this,0)">
+        <p>SP</p>
+        <input type="number" name="silver_piece" min="0" max="99" value="0" onfocusout="checkV(this,0)">
+        <p>GP</p>
+        <input type="number" name="gold_piece" min="0" max="99" value="0" onfocusout="checkV(this,0)">
+        
+        <h2>Equipment:</h2>
+        <textarea rows="4" cols="50" name="equipment"></textarea><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+<script src="scripts/formcollection.js"></script> 
+
+</body>
+</html>
