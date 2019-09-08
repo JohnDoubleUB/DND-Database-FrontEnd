@@ -48,7 +48,9 @@ function buildTable(tableSection, tableData, body=false){
         //let idLink ="<button onclick=\"location.href='"+link+tableData[0]+"'\""+">"+buttonName+"</button>";
         
         //The link plus id as param
-        let idLinkParam = "<button onclick=\"location.href='"+link+"?id="+tableData[0]+"'\""+">Pet Info</button>";
+
+        //let idLinkParam = "<button onclick=\"location.href='"+link+"?id="+tableData[0]+"'\""+">Pet Info</button>";
+        let idLinkParam = "<button class=\"btn btn-light p-3\" onclick=\"location.href='"+link+"?id="+tableData[0]+"'\""+">Delete</button>";
 
         console.log(idLinkParam);
 
@@ -64,8 +66,8 @@ function buildTable(tableSection, tableData, body=false){
 
         link ="ViewSpecificOwnersDetails.html";
 
-
-        idLinkParam = "<button onclick=\"location.href='"+link+"?id="+tableData[0]+"'\""+">User Info</button>";
+        //idLinkParam = "<button onclick=\"location.href='"+link+"?id="+tableData[0]+"'\""+">User Info</button>";
+        idLinkParam = "<button class=\"btn btn-light p-3\" onclick=\"location.href='"+link+"?id="+tableData[0]+"'\""+">Info</button>";
 
         contInner.innerHTML = idLinkParam;
         
