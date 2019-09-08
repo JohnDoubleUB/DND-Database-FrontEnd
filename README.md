@@ -1,4 +1,4 @@
-# DND Character Sheet Application
+# DND Character Sheet Application -
 
 In fulfilment of the solo project assignment for QA Consulting
 
