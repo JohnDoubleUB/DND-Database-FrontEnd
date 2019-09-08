@@ -4,21 +4,36 @@
 <head>
 <title>DND Database</title>
 
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel = "stylesheet" href="css/maincss.css" type="text/css"/>
+
 </head>
 <body>
-<div class="header">
-    <h1>DND Database</h1>
-</div>
+    <div class="container">
+        <div class="page-header">
+            <h1 class="display-5 text-center font-weight-bold">DND Database</h1>
+        </div>
 
-<div class="nav">
-    <ul> 
-        <li><a href="index.html">Home</a></li>
-        <li><a href="create-edit-character.html">Create/Edit a Character</a></li>
-        <li><a href="create-edit-inventory.html">Create/Edit Character Inventory</a></li>
-        <li><a href="view-delete-character-and-inventory.html">View/Delete Character + Inventory</a></li>
-    </ul>
-</div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light p-1 rounded">
+            <ul class="navbar-nav mr-auto nav-fill w-100"> 
+                <li class="nav-item"><a href="index.html" class="rounded-left btn-light nav-link disabled">Home</a></li>
+                <li class="nav-item"><a href="create-edit-character.html" class="btn-light nav-link">Create/Edit a Character</a></li>
+                <li class="nav-item"><a href="create-edit-inventory.html" class="btn-light nav-link">Create/Edit Character Inventory</a></li>
+                <li class="nav-item"><a href="view-delete-character-and-inventory.html" class="rounded-right btn-light nav-link">View/Delete Character + Inventory</a></li>
+            </ul>
+        </nav>
+
+
+        
+        <div class="container bg-white p-4">
+            <h1 class="display-6">Welcome!</h1>
+            <p class="lead">Welcome to DND Database! a website for storing your DND characters online!</p>
+        </div>
+
+
+    </div>
 
 <div class="mainbody">
 
@@ -26,5 +41,9 @@
 </div>
 
 
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
