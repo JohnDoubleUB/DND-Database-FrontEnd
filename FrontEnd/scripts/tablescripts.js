@@ -8,8 +8,64 @@ let dummyData = [
 ];
 
 
+function loadTableData(head, body, dataLink, buttonFunction){
+    makeRequest(dataLink)
+    .then((data)=>{
+        console.log("It worked!" + data);
+        let parsedData = JSON.parse(data);
+        let firstTime = true;
+        let headers = [];
+        let tableData = [];
 
-function buildTable(tableSection, tableData, body=false){
+        for(let record of parsedData){
+            let recordSet = [];
+            for(let item in record){
+                if(record.hasOwnProperty(item)){
+                    if(firstTime){ headers.push(item); }
+                    recordSet.push(record[item])
+                    //console.log(item + "=" + record[item])
+                }
+            }
+            tableData.push(recordSet);
+            firstTime = false;
+        }
+        if(headers.length > 0){
+            headers.push("Option");
+        }
+
+        buildTable(head, headers, true);
+        
+        for(let dData of tableData){
+            buildTable(body, dData, false, buttonFunction);
+        }
+
+    })
+    .catch((data)=>{
+        console.log("It failed!" + data);
+    })
+}
+
+function deleteCharacterId(id){
+    makeRequest("http://localhost:9000/characters/", id, type="DELETE")
+    .then((data)=>{
+        window.location.href = window.location.href;
+    })
+    .catch((data)=>{
+        console.log("It failed!" + data);
+    })
+}
+
+function deleteInventoryId(id){
+    makeRequest("http://localhost:9000/inventories/", id, type="DELETE")
+    .then((data)=>{
+        window.location.href = window.location.href;
+    })
+    .catch((data)=>{
+        console.log("It failed!" + data);
+    })
+}
+
+function buildTable(tableSection, tableData, body=false, buttonFunction){
     let container;
     let contInner;
 
@@ -42,7 +98,6 @@ function buildTable(tableSection, tableData, body=false){
         contInner = document.createElement("td");
 
         //Where the information needs to go
-        let link ="ViewPetsByOwner.html";
 
         //The link plus id!
         //let idLink ="<button onclick=\"location.href='"+link+tableData[0]+"'\""+">"+buttonName+"</button>";
@@ -50,7 +105,7 @@ function buildTable(tableSection, tableData, body=false){
         //The link plus id as param
 
         //let idLinkParam = "<button onclick=\"location.href='"+link+"?id="+tableData[0]+"'\""+">Pet Info</button>";
-        let idLinkParam = "<button class=\"btn btn-light p-3\" onclick=\"location.href='"+link+"?id="+tableData[0]+"'\""+">Delete</button>";
+        let idLinkParam = "<button class=\"btn btn-light p-3\" onclick=\""+buttonFunction+"('"+tableData[0]+"')\""+">Delete</button>";
 
         console.log(idLinkParam);
 
@@ -58,20 +113,7 @@ function buildTable(tableSection, tableData, body=false){
         
         container.appendChild(contInner);
 
-        //Make field for View user
-
-        contInner = document.createElement("td");
-
-
-
-        link ="ViewSpecificOwnersDetails.html";
-
-        //idLinkParam = "<button onclick=\"location.href='"+link+"?id="+tableData[0]+"'\""+">User Info</button>";
-        idLinkParam = "<button class=\"btn btn-light p-3\" onclick=\"location.href='"+link+"?id="+tableData[0]+"'\""+">Info</button>";
-
-        contInner.innerHTML = idLinkParam;
         
-        container.appendChild(contInner);
         
     }
 }

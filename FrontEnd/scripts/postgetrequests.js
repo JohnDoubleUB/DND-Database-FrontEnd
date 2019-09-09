@@ -17,7 +17,7 @@ function makeRequest(http, param, type="GET", rqstHdrStr="Content-Type", rqstHdr
         };
 
     //Changing how we deal with it based on if it is or isn't a post request!
-    if(type.toUpperCase() == "POST"){ // If post request!
+    if(type.toUpperCase() == "POST" || type.toUpperCase() == "PUT"){ // If post or put request!
         xhr.open(type.toUpperCase(), http);
         
         xhr.setRequestHeader(rqstHdrStr, rqstHdrVal);//This is important!
