@@ -48,106 +48,55 @@
             <h4 class="text-center">Character Info</h4>
 
             <div class="form-group">
-                <label for="cName">Character Name</label>
-                <input type="text" id="cName" class="form-control" name="characterName" placeholder="Character Name" required="required" pattern="[A-Za-z0-9]{1,20}"/>
+                <label for="name">Character Name</label>
+                <input type="text" id="name" class="form-control" name="name" placeholder="Character Name" required="required" pattern="[A-Za-z0-9]{1,20}"/>
                 
-                <label for="cRace">Race</label>
-                <input type="text" id="cRace" class="form-control" name="race" placeholder="Race" required="required" pattern="[A-Za-z0-9]{1,20}"/>
+                <label for="race">Race</label>
+                <input type="text" id="race" class="form-control" name="race" placeholder="Race" required="required" pattern="[A-Za-z0-9]{1,20}"/>
                 
-                <label for="cClass">Class</label>
-                <input type="text" id="cClass" class="form-control" name="class" placeholder="Class" required="required" pattern="[A-Za-z0-9]{1,20}"/>
+                <label for="playerClass">Class</label>
+                <input type="text" id="playerClass" class="form-control" name="playerClass" placeholder="Class" required="required" pattern="[A-Za-z0-9]{1,20}"/>
                 
-                <label for="cBG">Class</label>
-                <input type="text" id="cBG" class="form-control" name="background" placeholder="Background" required="required" pattern="[A-Za-z0-9]{1,20}"/>
+                <label for="background">Background</label>
+                <input type="text" id="background" class="form-control" name="background" placeholder="Background" required="required" pattern="[A-Za-z0-9]{1,20}"/>
 
 
-                <label for="cAlignm">Alignment</label>
-                <input type="text" id="cAlignm" class="form-control" name="alignment" placeholder="Alignment" required="required" pattern="[A-Za-z0-9]{1,20}"/>
+                <label for="alignment">Alignment</label>
+                <input type="text" id="alignment" class="form-control" name="alignment" placeholder="Alignment" required="required" pattern="[A-Za-z0-9]{1,20}"/>
                 
-                <label for="cLevel">Level</label>
-                <input type="number" id="cLevel" class="form-control" name="level" min="1" max="999" value="1" onfocusout="checkV(this,1)">
+                <label for="level">Level</label>
+                <input type="number" id="level" class="form-control" name="level" min="1" max="999" value="1" onfocusout="checkV(this,1)">
             </div>
 
             <div class="form-group">
                     
                 <h4 class="text-center">Base Stats</h4>
                 
-                <label for="cBStren">Strength</label>
-                <input type="number" id="cBStren" class="form-control" name="base_str" min="0" max="99" value="10" onfocusout="checkV(this,10)">
+                <label for="baseStr">Strength</label>
+                <input type="number" id="baseStr" class="form-control" name="baseStr" min="0" max="99" value="10" onfocusout="checkV(this,10)">
                 
-                <label for="cBDex">Dexterity</label>
-                <input type="number" id="cBDex" class="form-control" name="base_dex" min="0" max="99" value="10" onfocusout="checkV(this,10)">
+                <label for="baseDex">Dexterity</label>
+                <input type="number" id="baseDex" class="form-control" name="baseDex" min="0" max="99" value="10" onfocusout="checkV(this,10)">
                 
-                <label for="cBCon">Constitution</label>
-                <input type="number" id="cBCon" class="form-control" name="base_con" min="0" max="99" value="10" onfocusout="checkV(this,10)">
+                <label for="baseCon">Constitution</label>
+                <input type="number" id="baseCon" class="form-control" name="baseCon" min="0" max="99" value="10" onfocusout="checkV(this,10)">
                 
-                <label for="cBInt">Intelligence</label>
-                <input type="number" id="cBInt" class="form-control" name="base_int" min="0" max="99" value="10" onfocusout="checkV(this,10)">
+                <label for="baseInt">Intelligence</label>
+                <input type="number" id="baseInt" class="form-control" name="baseInt" min="0" max="99" value="10" onfocusout="checkV(this,10)">
                 
-                <label for="cBWis">Wisdom</label>
-                <input type="number" id="cBWis" class="form-control" name="base_wis" min="0" max="99" value="10" onfocusout="checkV(this,10)">
+                <label for="baseWis">Wisdom</label>
+                <input type="number" id="baseWis" class="form-control" name="baseWis" min="0" max="99" value="10" onfocusout="checkV(this,10)">
                 
-                <label for="cBCha">Charisma</label>
-                <input type="number" id="cBCha" class="form-control" name="base_cha" min="0" max="99" value="10" onfocusout="checkV(this,10)">
+                <label for="baseCha">Charisma</label>
+                <input type="number" id="baseCha" class="form-control" name="baseCha" min="0" max="99" value="10" onfocusout="checkV(this,10)">
                
-                <label for="cBHP">Base Health</label>
-                <input type="number" id="cBHP" class="form-control" name="base_hp" min="0" max="99" value="10" onfocusout="checkV(this,10)">
+                <label for="baseHP">Base Health</label>
+                <input type="number" id="baseHP" class="form-control" name="baseHP" min="0" max="99" value="10" onfocusout="checkV(this,10)">
 
+                <label for="baseProficiency">Base Proficiency</label>
+                <input type="number" id="baseProficiency" class="form-control" name="baseProficiency" min="0" max="99" value="1" onfocusout="checkV(this,1)">
             </div>
-            
-            <div class="form-group">
-
-                <h4 class="text-center">Proficencies</h4>
-                <label for="cBP">Base Proficiency</label>
-                <input type="number" id="cBP" class="form-control" name="proficiency" min="0" max="99" value="1" onfocusout="checkV(this,1)">
                     
-
-                <div class="p-1"></div>
-                <h5 class="text-center">Skill Proficiencies</h5>
-
-                <div class="container row">
-                    <div class="form-check col-lg-4 col-md-6 col-xs-12"><input type="checkbox" class="form-check-input" id="prof_acro" name="skillprofs" value="prof_acro"><label class="form-check-label" for="prof_acro">Acrobatics(Dex)</label></div>
-                    <div class="form-check col-lg-4 col-md-6 col-xs-12"><input type="checkbox" class="form-check-input" id="prof_ahan" name="skillprofs" value="prof_ahan"><label class="form-check-label" for="prof_ahan">Animal Handling(Wis)</label></div>
-                    <div class="form-check col-lg-4 col-md-6 col-xs-12"><input type="checkbox" class="form-check-input" id="prof_arca" name="skillprofs" value="prof_arca"><label class="form-check-label" for="prof_arca">Arcana(Int)</label></div>
-                    <div class="form-check col-lg-4 col-md-6 col-xs-12"><input type="checkbox" class="form-check-input" id="prof_athl" name="skillprofs" value="prof_athl"><label class="form-check-label" for="prof_athl">Athletics(Str)</label></div>
-                    <div class="form-check col-lg-4 col-md-6 col-xs-12"><input type="checkbox" class="form-check-input" id="prof_decp" name="skillprofs" value="prof_decp"><label class="form-check-label" for="prof_decp">Deception(Cha)</label></div>
-                    <div class="form-check col-lg-4 col-md-6 col-xs-12"><input type="checkbox" class="form-check-input" id="prof_hist" name="skillprofs" value="prof_hist"><label class="form-check-label" for="prof_hist">History(Int)</label></div>
-                    <div class="form-check col-lg-4 col-md-6 col-xs-12"><input type="checkbox" class="form-check-input" id="prof_insi" name="skillprofs" value="prof_insi"><label class="form-check-label" for="prof_insi">Insight(Wis)</label></div>
-                    <div class="form-check col-lg-4 col-md-6 col-xs-12"><input type="checkbox" class="form-check-input" id="prof_itmd" name="skillprofs" value="prof_itmd"><label class="form-check-label" for="prof_itmd">Intimidation(Cha)</label></div>
-                    <div class="form-check col-lg-4 col-md-6 col-xs-12"><input type="checkbox" class="form-check-input" id="prof_invs" name="skillprofs" value="prof_invs"><label class="form-check-label" for="prof_invs">Investigation(Int)</label></div>
-                    <div class="form-check col-lg-4 col-md-6 col-xs-12"><input type="checkbox" class="form-check-input" id="prof_medi" name="skillprofs" value="prof_medi"><label class="form-check-label" for="prof_medi">Medicine(Wis)</label></div>
-                    <div class="form-check col-lg-4 col-md-6 col-xs-12"><input type="checkbox" class="form-check-input" id="prof_natr" name="skillprofs" value="prof_natr"><label class="form-check-label" for="prof_natr">Nature(Int)</label></div>
-                    <div class="form-check col-lg-4 col-md-6 col-xs-12"><input type="checkbox" class="form-check-input" id="prof_perp" name="skillprofs" value="prof_perp"><label class="form-check-label" for="prof_perp">Perception(Wis)</label></div>
-                    <div class="form-check col-lg-4 col-md-6 col-xs-12"><input type="checkbox" class="form-check-input" id="prof_perf" name="skillprofs" value="prof_perf"><label class="form-check-label" for="prof_perf">Performance(Cha)</label></div>
-                    <div class="form-check col-lg-4 col-md-6 col-xs-12"><input type="checkbox" class="form-check-input" id="prof_pers" name="skillprofs" value="prof_pers"><label class="form-check-label" for="prof_pers">Persuasion(Cha)</label></div>
-                    <div class="form-check col-lg-4 col-md-6 col-xs-12"><input type="checkbox" class="form-check-input" id="prof_reli" name="skillprofs" value="prof_reli"><label class="form-check-label" for="prof_reli">Religion(Int)</label></div>
-                    <div class="form-check col-lg-4 col-md-6 col-xs-12"><input type="checkbox" class="form-check-input" id="prof_slei" name="skillprofs" value="prof_slei"><label class="form-check-label" for="prof_slei">Sleight of Hand(Dex)</label></div>
-                    <div class="form-check col-lg-4 col-md-6 col-xs-12"><input type="checkbox" class="form-check-input" id="prof_slth" name="skillprofs" value="prof_slth"><label class="form-check-label" for="prof_slth">Stealth(Dex)</label></div>
-                    <div class="form-check col-lg-4 col-md-6 col-xs-12"><input type="checkbox" class="form-check-input" id="prof_surv" name="skillprofs" value="prof_surv"><label class="form-check-label" for="prof_surv">Survival(Wis)</label></div>
-                </div>
-
-                <div class="p-1"></div>
-
-                <h5 class="text-center">Saving Throws</h5>
-                <div class="container row">
-                    <div class="form-check col-lg-4 col-md-6 col-xs-12"><input type="checkbox" class="form-check-input" id="svgthr_str" name="savingthrows" value="svgthr_str"><label class="form-check-label" for="svgthr_str">Strength</label></div>
-                    <div class="form-check col-lg-4 col-md-6 col-xs-12"><input type="checkbox" class="form-check-input" id="svgthr_dex" name="savingthrows" value="svgthr_dex"><label class="form-check-label" for="svgthr_dex">Dexterity</label></div>
-                    <div class="form-check col-lg-4 col-md-6 col-xs-12"><input type="checkbox" class="form-check-input" id="svgthr_con" name="savingthrows" value="svgthr_con"><label class="form-check-label" for="svgthr_con">Constitution</label></div>
-                    <div class="form-check col-lg-4 col-md-6 col-xs-12"><input type="checkbox" class="form-check-input" id="svgthr_int" name="savingthrows" value="svgthr_int"><label class="form-check-label" for="svgthr_int">Intelligence</label></div>
-                    <div class="form-check col-lg-4 col-md-6 col-xs-12"><input type="checkbox" class="form-check-input" id="svgthr_wis" name="savingthrows" value="svgthr_wis"><label class="form-check-label" for="svgthr_wis">Wisdom</label></div>
-                    <div class="form-check col-lg-4 col-md-6 col-xs-12"><input type="checkbox" class="form-check-input" id="svgthr_cha" name="savingthrows" value="svgthr_cha"><label class="form-check-label" for="svgthr_cha">Charisma</label></div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <h4 class="text-center" >Other</h4>
-
-                <label for="other_profs_and_languages">Proficiencies & Languages:</label>
-                <textarea rows="4" cols="50" id="other_profs_and_languages" class="form-control" name="other_profs_and_languages"></textarea>
-        
-                <label for="features_and_traits">Features & Traits:</label>
-                <textarea rows="4" cols="50" id="features_and_traits" class="form-control" name="features_and_traits"></textarea><br>
-            </div>
         
             <input type="submit" class="btn btn-light" value="Submit">
         </form>

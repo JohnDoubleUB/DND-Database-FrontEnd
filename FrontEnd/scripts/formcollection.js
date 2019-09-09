@@ -17,8 +17,8 @@ function submitCharacterForm(formData){
 
     }
     console.log(keyValues);
-    console.log(savingthrows);
-    console.log(skillprofs);
+    // console.log(savingthrows);
+    // console.log(skillprofs);
 
     return false;
 }
