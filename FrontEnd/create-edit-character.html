@@ -34,8 +34,8 @@
         <div class="row">
             <div class="card col-12 p-2">
                     <h5 class="card-title">Select a Character</h5>
-                    <select name="Character" id="charSelc"> 
-                        <option value="0">[New Character]</option>
+                    <select name="playerId" id="playerId"> 
+                        <option value="n">[Create a New Character]</option>
                     </select>
             </div>
         </div>
@@ -49,7 +49,7 @@
 
             <div class="form-group">
                 <label for="name">Character Name</label>
-                <input type="text" id="name" class="form-control" name="name" placeholder="Character Name" required="required" pattern="[A-Za-z0-9]{1,20}"/>
+                <input type="text" id="name" class="form-control" name="name" placeholder="Character Name" required="required" pattern="[A-Za-z0-9 ]{1,20}"/>
                 
                 <label for="race">Race</label>
                 <input type="text" id="race" class="form-control" name="race" placeholder="Race" required="required" pattern="[A-Za-z0-9]{1,20}"/>
@@ -58,11 +58,11 @@
                 <input type="text" id="playerClass" class="form-control" name="playerClass" placeholder="Class" required="required" pattern="[A-Za-z0-9]{1,20}"/>
                 
                 <label for="background">Background</label>
-                <input type="text" id="background" class="form-control" name="background" placeholder="Background" required="required" pattern="[A-Za-z0-9]{1,20}"/>
+                <input type="text" id="background" class="form-control" name="background" placeholder="Background" required="required" pattern="[A-Za-z0-9 ]{1,20}"/>
 
 
                 <label for="alignment">Alignment</label>
-                <input type="text" id="alignment" class="form-control" name="alignment" placeholder="Alignment" required="required" pattern="[A-Za-z0-9]{1,20}"/>
+                <input type="text" id="alignment" class="form-control" name="alignment" placeholder="Alignment" required="required" pattern="[A-Za-z0-9 ]{1,20}"/>
                 
                 <label for="level">Level</label>
                 <input type="number" id="level" class="form-control" name="level" min="1" max="999" value="1" onfocusout="checkV(this,1)">
@@ -109,7 +109,8 @@
     </div>
 
 <script src="scripts/postgetrequests.js"></script>
-<script src="scripts/formcollection.js"></script> 
+<script src="scripts/formcollection.js"></script>
+<script>buildDropdown("http://localhost:9000/characters");</script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
