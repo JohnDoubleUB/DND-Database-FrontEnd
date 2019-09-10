@@ -12,7 +12,7 @@ function submitCharacterForm(formData){
     console.log(keyValues);
 
     makeRequest("http://localhost:9000/characters", keyValues, type="POST")
-    .then((data)=>{
+    .then(data => {
         console.log("Create character worked!" + data)
         let parsedData = JSON.parse(data);
         // let playerId = document.getElementById("playerId")
@@ -28,7 +28,7 @@ function submitCharacterForm(formData){
         window.location.href = "create-edit-character.html" + "?id=" + parsedData.id
 
     })
-    .catch((data)=>{
+    .catch(data => {
         console.log("Create character failed!" + data);
     })
 
@@ -60,7 +60,7 @@ function buildDropdown(dataLink){
     let playerId = document.getElementById("playerId");
     
     makeRequest(dataLink)
-    .then((data)=>{
+    .then(data => {
         console.log("it worked!" + data);
 
         let parsedData = JSON.parse(data)
@@ -73,7 +73,7 @@ function buildDropdown(dataLink){
 
 
             paramId = url.get('id');
-            if(String(key["id"]) == String(paramId)){
+            if(String(key["id"]) === String(paramId)){
                 dropDResult.selected="selected";
             }
 
@@ -83,7 +83,7 @@ function buildDropdown(dataLink){
         }
 
     })
-    .catch((data)=>{
+    .catch(data => {
         console.log("It failed!" + data);
     })
 }
