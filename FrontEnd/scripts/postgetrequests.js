@@ -5,7 +5,7 @@ function makeRequest(http, param, type="GET", rqstHdrStr="Content-Type", rqstHdr
         
         const xhr = new XMLHttpRequest(); // Create xh request!
 
-        xhr.onload = data => {
+        xhr.onload = (data) => {
 
             // If POST then 201 is the indicator of success!
             if(xhr.status === 200 || xhr.status === 201){

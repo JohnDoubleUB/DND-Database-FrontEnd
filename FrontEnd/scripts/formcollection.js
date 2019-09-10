@@ -1,5 +1,8 @@
 const url = new URLSearchParams(location.search);
 
+//player selection dropdown
+const pDropDown = document.getElementById("playerId");
+
 function submitCharacterForm(formData){
     let keyValues = {};
 
@@ -11,28 +14,47 @@ function submitCharacterForm(formData){
     }
     console.log(keyValues);
 
-    makeRequest("http://localhost:9000/characters", keyValues, type="POST")
-    .then(data => {
-        console.log("Create character worked!" + data)
+    //If the value of the dropdown is n, then we are creating a new item!
+    if(pDropDown.value === "n"){
+        makeRequest("http://localhost:9000/characters", keyValues, type="POST")
+        .then(data => {
+        console.log("Create character worked!" + data);
         let parsedData = JSON.parse(data);
-        // let playerId = document.getElementById("playerId")
-        // playerId.innerHTML = "";
+        window.location.href = "create-edit-character.html" + "?id=" + parsedData.id;
 
-        // let defaultDrop = document.createElement("option");
-        // defaultDrop.innerText = "[Create a New Character]"
-        // defaultDrop.value="n";
-        // playerId.appendChild(defaultDrop);
-        
+        })
+        .catch(data => {
+            console.log("Create character failed!" + data);
+        });
+    } else {
+        makeRequest("http://localhost:9000/characters/" + pDropDown.value, keyValues, type="PUT")
+        .then(data => {
+        console.log("Create character worked!" + data);
+        let parsedData = JSON.parse(data);
+        window.location.href = "create-edit-character.html" + "?id=" + parsedData.id;
 
-        // buildDropdown("http://localhost:9000/characters");
-        window.location.href = "create-edit-character.html" + "?id=" + parsedData.id
-
-    })
-    .catch(data => {
-        console.log("Create character failed!" + data);
-    })
-
+        })
+        .catch(data => {
+            console.log("Create character failed!" + data);
+        }); 
+    }
     return false;
+}
+
+
+function updateCharacterFields(box){
+    let id = parseInt(box.value);
+    if()
+    makeRequest("http://localhost:9000/characters/", box.value)
+    .then((data) => {
+        let parsedData = JSON.parse(data);
+
+
+    })
+    .catch((data) => {
+
+    });
+
 }
 
 function submitInventoryForm(formData){
@@ -63,7 +85,7 @@ function buildDropdown(dataLink){
     .then(data => {
         console.log("it worked!" + data);
 
-        let parsedData = JSON.parse(data)
+        let parsedData = JSON.parse(data);
         for(key of parsedData){
             // Create option
             let dropDResult = document.createElement("option");

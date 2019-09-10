@@ -1,5 +1,5 @@
-let tabHead = document.getElementById("tableHead");
-let tabBod = document.getElementById("tableBody");
+const tabHead = document.getElementById("tableHead");
+const tabBod = document.getElementById("tableBody");
 
 let dummyHeaders = ["Id", "Name", "Class", "Alignment", "Base Str", "Base Dex", "Base End", "Base Con", "Base Cha", "Base Wis", "Base Health", "Option1", "Option2"];
 let dummyData = [
@@ -8,9 +8,34 @@ let dummyData = [
 ];
 
 
+function getItemValues(record){
+    let data = [];
+    
+    for(let item in record){
+        if(record.hasOwnProperty(item)){
+            data.push(record[item])
+        }
+    }
+
+    return data;
+}
+
+function getItemNames(record){
+    let data = [];
+
+    for(let item in record){
+        if(record.hasOwnProperty(item)){
+            data.push(item);
+        }
+    }
+
+    return data;
+}
+
+
 function loadTableData(head, body, dataLink, buttonFunction){
     makeRequest(dataLink)
-    .then( data => {
+    .then((data) => {
         console.log("It worked!" + data);
         
         //Parse data
@@ -41,42 +66,18 @@ function loadTableData(head, body, dataLink, buttonFunction){
         }
 
     })
-    .catch( data => {
+    .catch((data) => {
         console.log("It failed!" + data);
     });
-}
-
-function getItemValues(record){
-    let data = [];
-    
-    for(let item in record){
-        if(record.hasOwnProperty(item)){
-            data.push(record[item])
-        }
-    }
-
-    return data;
-}
-
-function getItemNames(record){
-    let data = [];
-
-    for(let item in record){
-        if(record.hasOwnProperty(item)){
-            data.push(item);
-        }
-    }
-
-    return data;
 }
 
 
 function deleteCharacterId(id){
     makeRequest("http://localhost:9000/characters/", id, type="DELETE")
-    .then(data => {
+    .then((data) => {
         window.location.href = window.location.href;
     })
-    .catch(data => {
+    .catch((data) => {
         console.log("It failed!" + data);
     })
 }
@@ -85,10 +86,10 @@ function deleteCharacterId(id){
 
 function deleteInventoryId(id){
     makeRequest("http://localhost:9000/inventories/", id, type="DELETE")
-    .then(data => {
+    .then((data) => {
         window.location.href = window.location.href;
     })
-    .catch(data => {
+    .catch((data) => {
         console.log("It failed!" + data);
     });
 }
@@ -141,9 +142,6 @@ function buildTableHead(container, tableData){
         container.appendChild(contInner);
     }
 }
-
-
-
 
 function makeButton(functionName, functionArgument, buttonText, classStyling){
     return "<button class=\"" + classStyling + "\" onclick=\""+functionName+"('"+functionArgument+"')\""+">" + buttonText + "</button>";
