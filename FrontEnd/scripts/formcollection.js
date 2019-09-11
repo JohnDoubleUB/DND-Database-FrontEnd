@@ -43,18 +43,42 @@ function submitCharacterForm(formData){
 
 
 function updateCharacterFields(box){
-    let id = parseInt(box.value);
-    if()
-    makeRequest("http://localhost:9000/characters/", box.value)
-    .then((data) => {
-        let parsedData = JSON.parse(data);
+    if(box.value !== "n"){
+        
+        let id = parseInt(box.value);
+        makeRequest("http://localhost:9000/characters/", box.value)
+        .then((data) => {
+            let parsedData = JSON.parse(data);
+            console.log(parsedData);
+            setCharacterFields(parsedData);
+
+        })
+        .catch((data) => {
+
+        });
+        
+    } else {
+        setCharacterFields(false);
+    }
+
+}
 
 
-    })
-    .catch((data) => {
+function setCharacterFields(newData){
+    let cFieldsArray = ["name", "race", "playerClass", "alignment", "background", "baseCha", 
+    "baseCon", "baseDex","baseHP", "baseInt", "baseProficiency", "baseStr", "baseWis", "level"];
+    
+    let cDefaultsArray = ["", "", "", "", "", 10, 10, 10, 10, 10, 1, 10, 10, 1];
 
-    });
-
+    if(newData){
+        for(field of cFieldsArray){
+            document.getElementById(field).value = newData[field];
+        }
+    } else {
+        for(let i = 0; i < cFieldsArray.length; i++){
+            document.getElementById(cFieldsArray[i]).value=cDefaultsArray[i];
+        }
+    }
 }
 
 function submitInventoryForm(formData){
@@ -103,6 +127,7 @@ function buildDropdown(dataLink){
             playerId.appendChild(dropDResult);
 
         }
+        updateCharacterFields(playerId);
 
     })
     .catch(data => {
