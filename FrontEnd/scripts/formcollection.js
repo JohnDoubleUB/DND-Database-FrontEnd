@@ -20,7 +20,14 @@ function submitCharacterForm(formData){
         .then(data => {
         console.log("Create character worked!" + data);
         let parsedData = JSON.parse(data);
-        window.location.href = "create-edit-character.html" + "?id=" + parsedData.id;
+        console.log(parsedData);
+
+        //Refresh dropdown
+        refreshDropDown(pDropDown);
+        buildDropdown("http://localhost:9000/characters", parsedData.id);
+
+        //updateCharacterFields(playerId);
+        //window.location.href = "create-edit-character.html" + "?id=" + parsedData.id;
 
         })
         .catch(data => {
@@ -31,7 +38,12 @@ function submitCharacterForm(formData){
         .then(data => {
         console.log("Create character worked!" + data);
         let parsedData = JSON.parse(data);
-        window.location.href = "create-edit-character.html" + "?id=" + parsedData.id;
+        
+        console.log(parsedData);
+
+        refreshDropDown(pDropDown);
+        buildDropdown("http://localhost:9000/characters", parsedData.id);
+        //window.location.href = "create-edit-character.html" + "?id=" + parsedData.id;
 
         })
         .catch(data => {
@@ -46,7 +58,7 @@ function updateCharacterFields(box){
     if(box.value !== "n"){
         
         let id = parseInt(box.value);
-        makeRequest("http://localhost:9000/characters/", box.value)
+        makeRequest("http://localhost:9000/characters/", id)
         .then((data) => {
             let parsedData = JSON.parse(data);
             console.log(parsedData);
@@ -61,6 +73,47 @@ function updateCharacterFields(box){
         setCharacterFields(false);
     }
 
+}
+
+function updateInventoryFields(box){
+    if(box.value !== "n"){
+        let pId = parseInt(box.value);
+
+        makeRequest("http://localhost:9000/inventories/playerid/", pId)
+        .then((data) => {
+            let parsedData = JSON.parse(data);
+            console.log(parsedData);
+            setInventoryFields(parsedData[0]);
+        })
+        .catch((data) => {
+
+        });   
+    } else {
+        setInventoryFields(false)
+    }
+}
+
+function refreshDropDown(dropDown, defaultDrop=["n","[Create a New Character]"] ){
+    dropDown.innerHTML = "";
+    let defaultOption = document.createElement("option");
+    defaultOption.value=defaultDrop[0];
+    defaultOption.innerText=defaultDrop[1];
+    dropDown.appendChild(defaultOption);
+}
+
+function setInventoryFields(newData){
+    let iFieldsArray = ["copperPiece", "goldPiece", "silverPiece", "platinumPiece", "equipment"];
+    let iDefaultsArray = [0, 0, 0, 0, ""];
+
+    if(newData){
+        for(field of iFieldsArray){
+            document.getElementById(field).value = newData[field];
+        }
+    } else {
+        for(let i = 0; i < iFieldsArray.length; i++){
+            document.getElementById(iFieldsArray[i]).value=iDefaultsArray[i];
+        }
+    }
 }
 
 
@@ -87,7 +140,6 @@ function submitInventoryForm(formData){
 
     //Check that the user has selected a character
     if(formData.playerId.value !== "n"){
-        console.log("An object!");
         
         for(let element of formData.elements){
             if(element.name){
@@ -103,9 +155,11 @@ function submitInventoryForm(formData){
             //Check if any for the given player id exist already
             let idExists = false;
 
-            for(inventory in parsedData){
-                if(String(playerId.value) === (inventory.playerId)) {
+            for(inventory of parsedData){
+                console.log("playerId matcher: "+ inventory["playerId"])
+                if(String(playerId.value) === String(inventory.playerId)) {
                     idExists = true;
+                    console.log("IdMatch!");
                     break;
                 }
             }
@@ -120,7 +174,7 @@ function submitInventoryForm(formData){
                     console.log("it failed!", data);
                 });
             } else { //If an inventory does exist then update it!
-                makeRequest("http://localhost:9000/inventories", keyValues, type="PUT")
+                makeRequest("http://localhost:9000/inventories/playerid/" + formData.playerId.value, keyValues, type="PUT")
                 .then((data) => {
                     console.log("Update Worked!", data);
                 })
@@ -154,7 +208,7 @@ function checkV(box, resting){
     }
 }
 
-function buildDropdown(dataLink){
+function buildDropdown(dataLink, selectedValue="n"){
     let playerId = document.getElementById("playerId");
     
     makeRequest(dataLink)
@@ -179,10 +233,11 @@ function buildDropdown(dataLink){
             playerId.appendChild(dropDResult);
 
         }
-        updateCharacterFields(playerId);
+
+        playerId.value=selectedValue;
 
     })
     .catch(data => {
         console.log("It failed!" + data);
-    })
+    });
 }

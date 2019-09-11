@@ -75,6 +75,8 @@ function loadTableData(head, body, dataLink, buttonFunction){
 function deleteCharacterId(id){
     makeRequest("http://localhost:9000/characters/", id, type="DELETE")
     .then((data) => {
+        parsedData = JSON.parse(data);
+        makeRequest("http://localhost:9000/inventories/playerid/",parsedData.id, type="DELETE");
         window.location.href = window.location.href;
     })
     .catch((data) => {
