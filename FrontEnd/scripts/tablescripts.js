@@ -33,7 +33,7 @@ function getItemNames(record){
 }
 
 
-function loadTableData(head, body, dataLink, buttonFunction){
+function loadTableData(head, body, dataLink, buttonFunction, identifier="", excludeIdentifier=false){
     makeRequest(dataLink)
     .then((data) => {
         console.log("It worked!" + data);
@@ -44,25 +44,41 @@ function loadTableData(head, body, dataLink, buttonFunction){
         //Create arrays
         let headers = [];
         let tableData = [];
+        let recIds = [];
+
 
         //Fill tableDataArray with all customerd data
         for(let record of parsedData) {
-            let recordSet = getItemValues(record);
+            let recordSet = getItemValues(record, identifier, excludeIdentifier); //Add an exclude argument to function as well as here!
+            
+            recIds.push(record[identifier]);
             tableData.push(recordSet);
         }
         
         //Get headers for the table
-        headers = getItemNames(parsedData[0]);
+        headers = getItemNames(parsedData[0], identifier, excludeIdentifier); //Add an exclude argument to function as well as here!
         
         //Add option if there is any table entires
         if(headers.length > 0) { headers.push("Option"); }
+
+        //Empty table head
+        head.innerHTML = "";
+
+        //Empty table body
+        body.innerHTML = "";
 
         //Build Table head
         buildTable(head, headers, true);
         
         //Build table body
-        for(let dData of tableData){
-            buildTable(body, dData, false, buttonFunction);
+        // for(let dData of tableData){
+        //     buildTable(body, dData, false, buttonFunction, tableIds);
+        // }
+        //Replace with iterative for loop
+        for(let i = 0; i < tableData.length; i++){
+            let dData = tableData[i];
+            let recId = recIds[i];
+            buildTable(body, dData, false, buttonFunction, recId);            
         }
 
     })
@@ -77,7 +93,7 @@ function deleteCharacterId(id){
     .then((data) => {
         parsedData = JSON.parse(data);
         makeRequest("http://localhost:9000/inventories/playerid/",parsedData.id, type="DELETE");
-        window.location.href = window.location.href;
+        loadTableData(tabHead, tabBod, "http://localhost:9000/characters", "deleteCharacterId")
     })
     .catch((data) => {
         console.log("It failed!" + data);
@@ -89,7 +105,7 @@ function deleteCharacterId(id){
 function deleteInventoryId(id){
     makeRequest("http://localhost:9000/inventories/", id, type="DELETE")
     .then((data) => {
-        window.location.href = window.location.href;
+        loadTableData(tabHead, tabBod, "http://localhost:9000/characters", "deleteCharacterId")
     })
     .catch((data) => {
         console.log("It failed!" + data);
@@ -98,14 +114,16 @@ function deleteInventoryId(id){
 
 
 
-function buildTable(tableSection, tableData, body=false, buttonFunction){
+function buildTable(tableSection, tableData, head=false, buttonFunction, recId){
     let container = document.createElement("tr");
     tableSection.appendChild(container);
 
-    if(body){
-        buildTableBody(container, tableData);
-    } else {   
+    if(head){
         buildTableHead(container, tableData);
+    } else {   
+        //Define container id/name here!
+        container.id="trd-id"+recId;
+        buildTableBody(container, tableData);
         
         // Create delete buttons!
         let contInner = document.createElement("td");
@@ -117,7 +135,7 @@ function buildTable(tableSection, tableData, body=false, buttonFunction){
 
 
 //Builds body based on array to container
-function buildTableBody(container, dataArray){
+function buildTableHead(container, dataArray){ //To head
     for(let data of dataArray){
         contInner = document.createElement("th")
         contInner.scope = "col";
@@ -129,7 +147,7 @@ function buildTableBody(container, dataArray){
 
 
 //Builds head based on array to container
-function buildTableHead(container, tableData){
+function buildTableBody(container, tableData){ // To body
     let firstRun = true;
     
     for(let data of tableData){
