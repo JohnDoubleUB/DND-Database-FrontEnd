@@ -102,7 +102,7 @@ function deleteCharacterId(id){
 function deleteInventoryId(id){
     makeRequest("http://"+DB_ADDRESS+":9000/inventories/", id, type="DELETE")
     .then((data) => {
-        loadTableData(tabHead, tabBod, "http://"+DB_ADDRESS+":9000/inventories", "deleteCharacterId");
+        loadTableData(tabHead, tabBod, "http://"+DB_ADDRESS+":9000/inventories", "deleteInventoryId");
     })
     .catch((data) => {
         console.log("It failed!" + data);
