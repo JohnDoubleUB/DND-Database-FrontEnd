@@ -90,7 +90,7 @@ function deleteCharacterId(id){
     .then((data) => {
         parsedData = JSON.parse(data);
         makeRequest("http://"+DB_ADDRESS+":9000/inventories/playerid/",parsedData.id, type="DELETE");
-        loadTableData(tabHead, tabBod, "http://"+DB_ADDRESS+":9000/characters", "deleteCharacterId")
+        loadTableData(tabHead, tabBod, "http://"+DB_ADDRESS+":9000/characters", "deleteCharacterId");
     })
     .catch((data) => {
         console.log("It failed!" + data);
@@ -102,7 +102,7 @@ function deleteCharacterId(id){
 function deleteInventoryId(id){
     makeRequest("http://"+DB_ADDRESS+":9000/inventories/", id, type="DELETE")
     .then((data) => {
-        loadTableData(tabHead, tabBod, "http://"+DB_ADDRESS+":9000/characters", "deleteCharacterId")
+        loadTableData(tabHead, tabBod, "http://"+DB_ADDRESS+":9000/inventories", "deleteCharacterId");
     })
     .catch((data) => {
         console.log("It failed!" + data);
