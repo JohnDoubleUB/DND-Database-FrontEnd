@@ -1,5 +1,6 @@
 const tabHead = document.getElementById("tableHead");
 const tabBod = document.getElementById("tableBody");
+const dbaddress = "34.89.110.1";
 
 let dummyHeaders = ["Id", "Name", "Class", "Alignment", "Base Str", "Base Dex", "Base End", "Base Con", "Base Cha", "Base Wis", "Base Health", "Option1", "Option2"];
 let dummyData = [
@@ -89,11 +90,11 @@ function loadTableData(head, body, dataLink, buttonFunction, identifier="", excl
 
 
 function deleteCharacterId(id){
-    makeRequest("http://localhost:9000/characters/", id, type="DELETE")
+    makeRequest("http://"+dbaddress+":9000/characters/", id, type="DELETE")
     .then((data) => {
         parsedData = JSON.parse(data);
-        makeRequest("http://localhost:9000/inventories/playerid/",parsedData.id, type="DELETE");
-        loadTableData(tabHead, tabBod, "http://localhost:9000/characters", "deleteCharacterId")
+        makeRequest("http://"+dbaddress+":9000/inventories/playerid/",parsedData.id, type="DELETE");
+        loadTableData(tabHead, tabBod, "http://"+dbaddress+":9000/characters", "deleteCharacterId")
     })
     .catch((data) => {
         console.log("It failed!" + data);
@@ -103,9 +104,9 @@ function deleteCharacterId(id){
 
 
 function deleteInventoryId(id){
-    makeRequest("http://localhost:9000/inventories/", id, type="DELETE")
+    makeRequest("http://"+dbaddress+":9000/inventories/", id, type="DELETE")
     .then((data) => {
-        loadTableData(tabHead, tabBod, "http://localhost:9000/characters", "deleteCharacterId")
+        loadTableData(tabHead, tabBod, "http://"+dbaddress+":9000/characters", "deleteCharacterId")
     })
     .catch((data) => {
         console.log("It failed!" + data);
