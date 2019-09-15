@@ -71,14 +71,11 @@ function loadTableData(head, body, dataLink, buttonFunction, identifier="", excl
         //Build Table head
         buildTable(head, headers, true);
         
-        //Build table body
-        // for(let dData of tableData){
-        //     buildTable(body, dData, false, buttonFunction, tableIds);
-        // }
+        
         //Replace with iterative for loop
         for(let i = 0; i < tableData.length; i++){
             let dData = tableData[i];
-            let recId = recIds[i];
+            let recId = i; //recIds[i]; //This way they are uniquely numbered but nicely!
             buildTable(body, dData, false, buttonFunction, recId);            
         }
 
