@@ -1,5 +1,4 @@
 const url = new URLSearchParams(location.search);
-const dbaddress = "34.89.110.1";
 
 //player selection dropdown
 const pDropDown = document.getElementById("playerId");
@@ -17,7 +16,7 @@ function submitCharacterForm(formData){
 
     //If the value of the dropdown is n, then we are creating a new item!
     if(pDropDown.value === "n"){
-        makeRequest("http://"+dbaddress+":9000/characters", keyValues, type="POST")
+        makeRequest("http://"+DB_ADDRESS+":9000/characters", keyValues, type="POST")
         .then(data => {
         console.log("Create character worked!" + data);
         let parsedData = JSON.parse(data);
@@ -25,7 +24,7 @@ function submitCharacterForm(formData){
 
         //Refresh dropdown
         refreshDropDown(pDropDown);
-        buildDropdown("http://"+dbaddress+":9000/characters", parsedData.id);
+        buildDropdown("http://"+DB_ADDRESS+":9000/characters", parsedData.id);
 
         //updateCharacterFields(playerId);
         //window.location.href = "create-edit-character.html" + "?id=" + parsedData.id;
@@ -35,7 +34,7 @@ function submitCharacterForm(formData){
             console.log("Create character failed!" + data);
         });
     } else {
-        makeRequest("http://"+dbaddress+":9000/characters/" + pDropDown.value, keyValues, type="PUT")
+        makeRequest("http://"+DB_ADDRESS+":9000/characters/" + pDropDown.value, keyValues, type="PUT")
         .then(data => {
         console.log("Create character worked!" + data);
         let parsedData = JSON.parse(data);
@@ -43,7 +42,7 @@ function submitCharacterForm(formData){
         console.log(parsedData);
 
         refreshDropDown(pDropDown);
-        buildDropdown("http://"+dbaddress+":9000/characters", parsedData.id);
+        buildDropdown("http://"+DB_ADDRESS+":9000/characters", parsedData.id);
         //window.location.href = "create-edit-character.html" + "?id=" + parsedData.id;
 
         })
@@ -59,7 +58,7 @@ function updateCharacterFields(box){
     if(box.value !== "n"){
         
         let id = parseInt(box.value);
-        makeRequest("http://"+dbaddress+":9000/characters/", id)
+        makeRequest("http://"+DB_ADDRESS+":9000/characters/", id)
         .then((data) => {
             let parsedData = JSON.parse(data);
             console.log(parsedData);
@@ -80,7 +79,7 @@ function updateInventoryFields(box){
     if(box.value !== "n"){
         let pId = parseInt(box.value);
 
-        makeRequest("http://"+dbaddress+":9000/inventories/playerid/", pId)
+        makeRequest("http://"+DB_ADDRESS+":9000/inventories/playerid/", pId)
         .then((data) => {
             let parsedData = JSON.parse(data);
             console.log(parsedData);
@@ -150,7 +149,7 @@ function submitInventoryForm(formData){
         console.log(keyValues);
 
         //Get current inventories
-        makeRequest("http://"+dbaddress+":9000/inventories")
+        makeRequest("http://"+DB_ADDRESS+":9000/inventories")
         .then((data) => { 
             let parsedData = JSON.parse(data); 
             //Check if any for the given player id exist already
@@ -167,7 +166,7 @@ function submitInventoryForm(formData){
 
             //If the an inventory for this player id doesn't exist create one
             if(!idExists){
-                makeRequest("http://"+dbaddress+":9000/inventories", keyValues, type="POST")
+                makeRequest("http://"+DB_ADDRESS+":9000/inventories", keyValues, type="POST")
                 .then((data) => {
                     console.log("it worked!", data);
                 })
@@ -175,7 +174,7 @@ function submitInventoryForm(formData){
                     console.log("it failed!", data);
                 });
             } else { //If an inventory does exist then update it!
-                makeRequest("http://"+dbaddress+":9000/inventories/playerid/" + formData.playerId.value, keyValues, type="PUT")
+                makeRequest("http://"+DB_ADDRESS+":9000/inventories/playerid/" + formData.playerId.value, keyValues, type="PUT")
                 .then((data) => {
                     console.log("Update Worked!", data);
                 })
