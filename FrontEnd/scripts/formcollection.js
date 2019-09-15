@@ -59,7 +59,7 @@ function updateCharacterFields(box){
     if(box.value !== "n"){
         
         let id = parseInt(box.value);
-        makeRequest("http://localhost:9000/characters/", id)
+        makeRequest("http://"+dbaddress+":9000/characters/", id)
         .then((data) => {
             let parsedData = JSON.parse(data);
             console.log(parsedData);
@@ -80,7 +80,7 @@ function updateInventoryFields(box){
     if(box.value !== "n"){
         let pId = parseInt(box.value);
 
-        makeRequest("http://localhost:9000/inventories/playerid/", pId)
+        makeRequest("http://"+dbaddress+":9000/inventories/playerid/", pId)
         .then((data) => {
             let parsedData = JSON.parse(data);
             console.log(parsedData);
@@ -150,7 +150,7 @@ function submitInventoryForm(formData){
         console.log(keyValues);
 
         //Get current inventories
-        makeRequest("http://localhost:9000/inventories")
+        makeRequest("http://"+dbaddress+":9000/inventories")
         .then((data) => { 
             let parsedData = JSON.parse(data); 
             //Check if any for the given player id exist already
@@ -167,7 +167,7 @@ function submitInventoryForm(formData){
 
             //If the an inventory for this player id doesn't exist create one
             if(!idExists){
-                makeRequest("http://localhost:9000/inventories", keyValues, type="POST")
+                makeRequest("http://"+dbaddress+":9000/inventories", keyValues, type="POST")
                 .then((data) => {
                     console.log("it worked!", data);
                 })
@@ -175,7 +175,7 @@ function submitInventoryForm(formData){
                     console.log("it failed!", data);
                 });
             } else { //If an inventory does exist then update it!
-                makeRequest("http://localhost:9000/inventories/playerid/" + formData.playerId.value, keyValues, type="PUT")
+                makeRequest("http://"+dbaddress+":9000/inventories/playerid/" + formData.playerId.value, keyValues, type="PUT")
                 .then((data) => {
                     console.log("Update Worked!", data);
                 })
