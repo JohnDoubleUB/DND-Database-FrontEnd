@@ -8,7 +8,7 @@ function makeRequest(http, param, type="GET", rqstHdrStr="Content-Type", rqstHdr
         xhr.onload = (data) => {
 
             // If POST then 201 is the indicator of success!
-            if(xhr.status === 200 || xhr.status === 201){
+            if(xhr.status === 200 || xhr.status === 201 || xhr.status === 202){
                 resolve(xhr.response); // Success!
             } else {
                 reject(xhr.status); // Failure
