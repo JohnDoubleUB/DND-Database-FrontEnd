@@ -44,6 +44,8 @@ Click for higher res version
 
 <a name="deployment"></a>
 ## Deployment
+The build test, deployment and selenium tests were all automated through the use of jenkins with the backend this was done through the use of a jenkins file and with the front end this was done with a normal jenkins job. This application can be succesfully deployed both locally and on GCP, there is a globals.js file which contains constants for changing the location of the http requests 
+![Deployment Pipeline](/Documentation/ContinuousIntegrationPipelineProj.jpg)
 
 <a name="frontend"></a>
 ## Front End Design
