@@ -71,6 +71,18 @@ The build test, deployment and selenium tests were all automated through the use
 <a name="techused"></a>
 ### Technologies Used
 
+* H2 Database Engine - Database
+* Java - Logic
+* Front-end - HTML, CSS, JavaScript
+* Backend API - Spring-Boot
+* Jenkins - CI Server
+* Maven - Dependency Management
+* Surefire - Test Reporting
+* Codacy - Code Quality Checking
+* Git - VCS [Project Front End](https://github.com/JohnDoubleUB/QASoloProject), [Project Back End](https://github.com/JohnDoubleUB/dnddatabase)
+* [Trello](https://trello.com/b/DnaqB0v8/individual-project-dnd-database) - Project Tracking
+* GCP - Live Environment
+
 <a name="frontend"></a>
 ## Front End Design
 ### Wireframes
