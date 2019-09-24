@@ -45,8 +45,12 @@ Aswell as using Models, Repositories Services and Controllers to structure my pr
 ## Testing
 JUnit, Mockito and Selenium tests were used for automated testing, Codacy was used to check code quality throughout the project for both the front and backend.
 
-The coverage of my API using mockito junit tests can be seen here:
+The coverage of the API using mockito junit tests can be seen here:
 ![JUnit Mockito Coverage](/Documentation/backendcoverage.jpg)
+
+You can also see the surefire reports here:
+[Surefire Report for AppControllerServiceSuite](/Documentation/surefire-report-AppControllerServiceSuite.pdf)
+[Surefire Report for SeleniumSuite](/Documentation/surefire-report-SeleniumSuite.pdf)
 
 
 <a name="deployment"></a>
