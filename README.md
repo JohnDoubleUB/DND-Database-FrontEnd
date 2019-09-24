@@ -45,6 +45,10 @@ Aswell as using Models, Repositories Services and Controllers to structure my pr
 ## Testing
 JUnit, Mockito and Selenium tests were used for automated testing, Codacy was used to check code quality throughout the project for both the front and backend.
 
+The coverage of my API using mockito junit tests can be seen here:
+![JUnit Mockito Coverage](/Documentation/backendcoverage.jpg)
+
+
 <a name="deployment"></a>
 ## Deployment
 The build test, deployment and selenium tests were all automated through the use of jenkins with the backend this was done through the use of a jenkins file and with the front end this was done with a normal jenkins job. This application can be succesfully deployed both locally and on GCP, there is a globals.js file which contains constants for changing the location of the http requests 
