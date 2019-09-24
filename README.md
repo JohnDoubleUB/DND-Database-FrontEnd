@@ -28,6 +28,16 @@ The application must manipulate two tables with full CRUD functionality.
 For my project I decided to create an application that would allow the user to create dnd characters, edit, view and remove them from a database, there would be separate databases for certain details of the characters such as the race and class.
 <a name="architecture"></a>
 ## Architecture
+### Entity Relationship Diagrams
+#### Initial plan
+Though in my initial plan I intended to create a number of tables for different aspects of DnD characters; Classes, Races etc as noted on my trello, I only managed to create two tables with some relational aspects as shown in the diagram below
+
+#### Delivered Solution
+![Final ERD](Documentation/RelationshipDiagramQaProject.jpg)
+
+### Multi Tier Architecture Diagram
+Click for higher res version
+![MTA](/Documentation/DndDatabaseBackendArchitectureDiagram3.jpg)
 
 <a name="testing"></a>
 ## Testing
