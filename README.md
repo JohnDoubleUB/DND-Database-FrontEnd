@@ -50,7 +50,8 @@ JUnit, Mockito and Selenium tests were used for automated testing, Codacy was us
 
 ### You can also see the surefire reports here:
 [Surefire Report for AppControllerServiceSuite](/Documentation/surefire-report-AppControllerServiceSuite.pdf)   
-[Surefire Report for SeleniumSuite](/Documentation/surefire-report-SeleniumSuite.pdf)
+[Surefire Report for SeleniumSuite](/Documentation/surefire-report-SeleniumSuite.pdf)   
+Note: These were converted from html to pdf for easier reading on the repository, the html files are also available in documentation.
 
 
 <a name="deployment"></a>
