@@ -39,6 +39,8 @@ Though in my initial plan I intended to create a number of tables for different 
 Click for higher res version
 ![MTA](/Documentation/DndDatabaseBackendArchitectureDiagram3.jpg)
 
+Aswell as using Models, Repositories Services and Controllers to structure my project, I have also used Dto's (Data Transfer Objects), While this isn't entirely necessary in this project, it is safer to control access in this way as it means that the only time that direct interaction with the repository entity takes place is when something in the database is being changed.
+
 <a name="testing"></a>
 ## Testing
 JUnit, Mockito and Selenium tests were used for automated testing, Codacy was used to check code quality throughout the project for both the front and backend.
