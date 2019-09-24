@@ -41,6 +41,7 @@ Click for higher res version
 
 <a name="testing"></a>
 ## Testing
+JUnit, Mockito and Selenium tests were used for automated testing, Codacy was used to check code quality throughout the project for both the front and backend.
 
 <a name="deployment"></a>
 ## Deployment
