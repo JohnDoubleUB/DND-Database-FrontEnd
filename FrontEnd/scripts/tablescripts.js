@@ -20,7 +20,7 @@ function getItemValues(record, excludeValues=false, groupData=false, replaceWith
     for(let item in record){
         
         if(replaceWith && item === matcher){
-            data.push(keys[record[item]])
+            data.push(keys[record[item]]);
             continue;
         }
 
@@ -39,7 +39,7 @@ function getItemValues(record, excludeValues=false, groupData=false, replaceWith
         }
 
         if(record.hasOwnProperty(item)){
-            data.push(record[item])
+            data.push(record[item]);
         }
     }
     return data;
@@ -198,7 +198,7 @@ function buildTable(tableSection, tableData, head=false, buttonFunction, recId){
 //Builds body based on array to container
 function buildTableHead(container, dataArray){ //To head
     for(let data of dataArray){
-        contInner = document.createElement("th")
+        let contInner = document.createElement("th");
         contInner.scope = "col";
         contInner.innerText = data;
         container.appendChild(contInner);
