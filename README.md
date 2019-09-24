@@ -7,10 +7,14 @@ In fulfilment of the solo project assignment for QA Consulting
    * [Solution](#solution)
 
 [Architecture](#architecture)
+   * [Entity Relationship Diagram](#erd)
+   * [Multi Tier Architecture Diagram](#mtad)
 
 [Testing](#testing)
+   * [Reports](#reports)
 
 [Deployment](#deployment)
+   * [Technologies Used](#techused)
 
 [Front End Design](#frontend)
    * [Plan 1](#fep1)
@@ -28,6 +32,7 @@ The application must manipulate two tables with full CRUD functionality.
 For my project I decided to create an application that would allow the user to create dnd characters, edit, view and remove them from a database, there would be separate databases for certain details of the characters such as the race and class.
 <a name="architecture"></a>
 ## Architecture
+<a name="erd"></a>
 ### Entity Relationship Diagrams
 #### Initial plan
 Though in my initial plan I intended to create a number of tables for different aspects of DnD characters; Classes, Races etc as noted on my trello, I only managed to create two tables with some relational aspects as shown in the diagram below
@@ -35,6 +40,7 @@ Though in my initial plan I intended to create a number of tables for different 
 #### Delivered Solution
 ![Final ERD](Documentation/RelationshipDiagramQaProject.jpg)
 
+<a name="mtad"></a>
 ### Multi Tier Architecture Diagram
 Click for higher res version
 ![MTA](/Documentation/DndDatabaseBackendArchitectureDiagram3.jpg)
@@ -45,12 +51,16 @@ Aswell as using Models, Repositories Services and Controllers to structure my pr
 ## Testing
 JUnit, Mockito and Selenium tests were used for automated testing, Codacy was used to check code quality throughout the project for both the front and backend.
 
-### The coverage of the API using mockito junit tests can be seen here:
+<a name="reports"></a>
+### Reports
+
+#### The coverage of the API using mockito junit tests can be seen here:
 ![JUnit Mockito Coverage](/Documentation/backendcoverage.jpg)
 
-### You can also see the surefire reports here:
+#### You can also see the surefire reports here:
 [Surefire Report for AppControllerServiceSuite](/Documentation/surefire-report-AppControllerServiceSuite.pdf)   
 [Surefire Report for SeleniumSuite](/Documentation/surefire-report-SeleniumSuite.pdf)   
+
 Note: These were converted from html to pdf for easier reading on the repository, the html files are also available in documentation.
 
 
@@ -58,6 +68,8 @@ Note: These were converted from html to pdf for easier reading on the repository
 ## Deployment
 The build test, deployment and selenium tests were all automated through the use of jenkins with the backend this was done through the use of a jenkins file and with the front end this was done with a normal jenkins job. This application can be succesfully deployed both locally and on GCP, there is a globals.js file which contains constants for changing the location of the http requests 
 ![Deployment Pipeline](/Documentation/ContinuousIntegrationPipelineProj.jpg)
+<a name="techused"></a>
+### Technologies Used
 
 <a name="frontend"></a>
 ## Front End Design
