@@ -1,28 +1,19 @@
-/* body{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-} */
-
-.header{
-
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
-.nav{
-
+.page-header{
+    height: 5em;
+    background-size: cover;
+    background-image: url(../images/DnD-5th.jpg);
 }
 
-.mainbody{
-    
+
+.page-header h1 {
+    font-size: 4em;
 }
 
-.prebody{
 
+#footer{
+    text-align: center;
 }
-
-/* .prebody p{
-    display: inline-block;
-}
-
-.required
-{
-    color: red;
-} */
