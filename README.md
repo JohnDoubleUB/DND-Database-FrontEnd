@@ -63,6 +63,9 @@ JUnit, Mockito and Selenium tests were used for automated testing, Codacy was us
 
 Note: These were converted from html to pdf for easier reading on the repository, the html files are also available in documentation.
 
+#### Codacy
+[Front End Project Quality](https://app.codacy.com/manual/JohnDoubleUB/QASoloProject/dashboard?bid=14198592)   
+[Backend End Project Quality](https://app.codacy.com/manual/JohnDoubleUB/dnddatabase/dashboard?bid=14198594)
 
 <a name="deployment"></a>
 ## Deployment
