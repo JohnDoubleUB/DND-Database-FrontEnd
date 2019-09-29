@@ -48,6 +48,14 @@ Click for higher res version
 
 Aswell as using Models, Repositories Services and Controllers to structure my project, I have also used Dto's (Data Transfer Objects), While this isn't entirely necessary in this project, it is safer to control access in this way as it means that the only time that direct interaction with the repository entity takes place is when something in the database is being changed.
 
+#### OOP
+
+The backend was written in Java making use of the Springboot API and H2 as my database of choice, I did everything I could to ensure a good structure to my backend code and used interfaces where I could in order to help force a particular structure to my code via abstraction, I also used polymorphism in the form of overloading which was extremely useful while doing my mockito junit tests as well as turning my inventory objects into inventoryDtos for sending as responses to http requests.
+
+Encapsulaton was used in order to control how I was interacting with my variables within the inventory and playercharacter objects as well as their dto's and was used in a number of other places.
+
+Given the structure of my api I didn't make use of alot of inheritence however I did inherit JpaRepository for both of my repositories as this class simplifies the data access process for both relational and non-relational databases
+
 <a name="testing"></a>
 ## Testing
 JUnit, Mockito and Selenium tests were used for automated testing, Codacy was used to check code quality throughout the project for both the front and backend.
