@@ -68,7 +68,8 @@ Note: These were converted from html to pdf for easier reading on the repository
 [Backend End Project Quality](https://app.codacy.com/manual/JohnDoubleUB/dnddatabase/dashboard?bid=14198594)
 
 ## Video of Testing and CI Server
-<iframe width="560" height="315" src="https://www.youtube.com/embed/xeLE-XXkWaQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+I have put together a video to also demonstrate all my tests running both locally and on gcp.
+https://www.youtube.com/watch?v=xeLE-XXkWaQ&feature=youtu.be
 
 <a name="deployment"></a>
 ## Deployment
