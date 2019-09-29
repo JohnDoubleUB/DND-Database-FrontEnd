@@ -97,9 +97,9 @@ The build test, deployment and selenium tests were all automated through the use
 
 [Project Back End](https://github.com/JohnDoubleUB/dnddatabase)   
 
-In order to deploy this project in its entirety on GCP all you will need is to ensure that you have Docker, Jenkins, Apache2 and the Chromium Browser installed, ideally on Ubuntu 18.04.3 LTS as this is the distro I was using for this project.   
+In order to deploy this project in its entirety on GCP all you will need is to ensure that you have Docker, Docker-Compose, Jenkins, Apache2 and the Chromium Browser installed, ideally on Ubuntu 18.04.3 LTS as this is the distro I was using for this project. (Doing a google search on these things should come up with guides for these things if you are unsure)
 
-You must also ensure that permissions have been given to Jenkins both to use Docker and Apache2's /var/www/html folder. An issue I encountered when trying to get Jenkins to use Docker as a user without sudo was that Docker requires users who use its commands to have their home directories inside of /home. I solved this by moving his home directory and setting JENKINS_HOME enviroment varable to point at a jenkins home inside of /home. I'm sure there are other ways to fix this issue, but if in doubt  my solution did do the trick.
+You must also ensure that permissions have been given to Jenkins both to use Docker and Apache2's /var/www/html folder. An issue I encountered when trying to get Jenkins to use Docker as a user without sudo was that Docker requires users who use its commands to have their home directories inside of /home. I solved this by moving his home directory and setting JENKINS_HOME enviroment varable to point at a jenkins home inside of /home. I'm sure there are other ways to fix this issue, but if in doubt  my solution did do the trick. (You can find videos of how to move Jenkins' home that can help you do this if you are unsure)
 
 [Project Front End](https://github.com/JohnDoubleUB/QASoloProject)   
 
