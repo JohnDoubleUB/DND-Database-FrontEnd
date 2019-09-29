@@ -92,6 +92,22 @@ The build test, deployment and selenium tests were all automated through the use
 * [Trello](https://trello.com/b/DnaqB0v8/individual-project-dnd-database) - Project Tracking
 * GCP - Live Environment
 
+### Deploying this project
+#### Backend
+
+[Project Back End](https://github.com/JohnDoubleUB/dnddatabase)   
+
+In order to deploy this project in its entirety on GCP all you will need is to ensure that you have Docker, Jenkins, Apache2 and the Chromium Browser installed, ideally on Ubuntu 18.04.3 LTS as this is the distro I was using for this project.   
+
+You must also ensure that permissions have been given to Jenkins both to use Docker and Apache2's /var/www/html folder. An issue I encountered when trying to get Jenkins to use Docker as a user without sudo was that Docker requires users who use its commands to have their home directories inside of /home. I solved this by moving his home directory and setting JENKINS_HOME enviroment varable to point at a jenkins home inside of /home. I'm sure there are other ways to fix this issue, but if in doubt  my solution did do the trick.
+
+[Project Front End](https://github.com/JohnDoubleUB/QASoloProject)   
+
+#### Frontend
+
+Other than the Apache2 installed on GCP, the video demoing my testing and CI pipeline shows the settings I have for my builds, simpley replicate these and the project should operate like mine.
+
+
 <a name="frontend"></a>
 ## Front End Design
 ### Wireframes
