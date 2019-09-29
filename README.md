@@ -68,8 +68,9 @@ Note: These were converted from html to pdf for easier reading on the repository
 [Backend End Project Quality](https://app.codacy.com/manual/JohnDoubleUB/dnddatabase/dashboard?bid=14198594)
 
 ## Video of Testing and CI Server
-I have put together a video to also demonstrate all my tests running both locally and on gcp.
-https://www.youtube.com/watch?v=xeLE-XXkWaQ&feature=youtu.be
+I have put together a video to also demonstrate all my tests running both locally and on gcp.   
+https://www.youtube.com/watch?v=xeLE-XXkWaQ&feature=youtu.be   
+This also includes a demo of my CI Server and how it automatically checks and pulls changes from both my repos to make a smooth CI pipeline.
 
 <a name="deployment"></a>
 ## Deployment
