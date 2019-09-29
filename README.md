@@ -127,6 +127,17 @@ The plan here would be to maintain the ability to edit existing and create new o
 
 <a name="fefa"></a>
 ### Final Appearance
+#### Home Page
+![homepagefinal](/Documentation/FinalFrontendAppearence/homepage.jpg)
+#### Create/Edit Character Page
+![createeditcharacterpage](/Documentation/FinalFrontendAppearence/createeditcharacterpage.jpg)
+#### Create/Edit Inventory Page
+![createeditinventorypage](/Documentation/FinalFrontendAppearence/createeditinventorypage.jpg)
+#### View/Delete Character Page
+![viewdeletecharacterpage](/Documentation/FinalFrontendAppearence/viewdeletecharacterspage.jpg)
+#### View/Delete Inventory Page
+![viewdeleteinventoriespage](/Documentation/FinalFrontendAppearence/viewdeleteinventoriespage.jpg)
+
 
 <a name="improvements"></a>
 ## Future Improvements
