@@ -67,6 +67,9 @@ Note: These were converted from html to pdf for easier reading on the repository
 [Front End Project Quality](https://app.codacy.com/manual/JohnDoubleUB/QASoloProject/dashboard?bid=14198592)   
 [Backend End Project Quality](https://app.codacy.com/manual/JohnDoubleUB/dnddatabase/dashboard?bid=14198594)
 
+## Video of Testing and CI Server
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xeLE-XXkWaQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 <a name="deployment"></a>
 ## Deployment
 The build test, deployment and selenium tests were all automated through the use of jenkins with the backend this was done through the use of a jenkins file and with the front end this was done with a normal jenkins job. This application can be succesfully deployed both locally and on GCP, there is a globals.js file which contains constants for changing the location of the http requests 
