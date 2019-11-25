@@ -1,6 +1,6 @@
 # DND Character Sheet Application -
 
-In fulfilment of the solo project assignment for QA Consulting
+This was created as part of my individual project to demonstrate my newly gained skills during training at QA
 
 ## Index
 [Brief](#brief)
